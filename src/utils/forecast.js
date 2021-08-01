@@ -14,9 +14,11 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Unable to find the locion', undefined);
     } else {
+      // console.log(body.daily.data[0]);
       callback(
         undefined,
-        `${body.current.weather_descriptions}. It is currently ${body.current.temperature} degrees out. There is a ${body.current.feelslike}% chance of rain `
+        `${body.current.weather_descriptions}. It is currently ${body.current.temperature} degrees out. 
+        The humidity is ${body.current.humidity}. There is a ${body.current.feelslike}% chance of rain `
       );
     }
   });
